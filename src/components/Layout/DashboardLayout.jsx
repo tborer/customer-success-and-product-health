@@ -18,7 +18,7 @@ const DashboardLayout = ({ children }) => {
           <div className="p-2 rounded-lg" style={{ background: 'linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))' }}>
             <LayoutDashboard size={20} color="white" />
           </div>
-          <h1 className="text-xl font-bold ml-2">EduMetrics Health Hub</h1>
+          <h1 className="text-xl font-bold ml-2">Customer Metrics and Product Health Hub</h1>
         </div>
 
         <div className="flex-row items-center gap-6">

@@ -55,7 +55,7 @@ const FrictionHeatmapWidget = ({ cohort, onOpenDrillDown }) => {
                 <div className="flex-1 font-medium text-white">{mod.module}</div>
                 
                 <div className="flex-1 flex-row items-center justify-center gap-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
-                  <Clock size={14}/> {mod.timeOnPage} avg
+                  <Clock size={14}/> {mod.timeOnPage} avg -
                 </div>
                 
                 <div className="flex-1 flex-col items-end">
