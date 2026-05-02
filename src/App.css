@@ -1,0 +1,129 @@
+/* Empty, we use index.css for global styling and standard class names */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+  padding: 1.5rem;
+  flex: 1;
+}
+
+.col-span-12 { grid-column: span 12; }
+.col-span-8 { grid-column: span 8; }
+.col-span-4 { grid-column: span 4; }
+.col-span-6 { grid-column: span 6; }
+
+@media (max-width: 1024px) {
+  .col-span-8, .col-span-4 { grid-column: span 12; }
+}
+
+.widget-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.widget-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.widget-title svg {
+  color: var(--accent-primary);
+}
+
+.glass-panel {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Off-canvas panel styles */
+.drill-down-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 40;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+}
+
+.drill-down-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.drill-down-panel {
+  position: fixed;
+  top: 0;
+  right: -500px;
+  bottom: 0;
+  width: 100%;
+  max-width: 500px;
+  background: var(--bg-secondary);
+  border-left: 1px solid var(--border-light);
+  z-index: 50;
+  box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+  transition: right var(--transition-normal) cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.drill-down-panel.open {
+  right: 0;
+}
+
+.drill-down-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.drill-down-content {
+  padding: 1.5rem;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.metric-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.metric-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 0.5rem;
+}
+
+.metric-trend {
+  font-size: 0.875rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.trend-up { color: var(--status-success); }
+.trend-down { color: var(--status-danger); }
